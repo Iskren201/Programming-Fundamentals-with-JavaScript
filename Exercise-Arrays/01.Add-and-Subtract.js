@@ -1,22 +1,24 @@
 function slove(arr) {
-  let oldSum = 0;
-  let newSum = 0;
+  let originalSum = 0;
+  let modifiedSum = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    let num = arr[i];
-
-    oldSum += num;
-
-    if (num % 2 == 0) {
-      num += i;
+  const modifiedArray = arr.map((number, index) => {
+    if (number % 2 === 0) {
+      const modifiedNumber = number + index;
+      modifiedSum += modifiedNumber;
+      originalSum += number;
+      return modifiedNumber;
     } else {
-      num -= i;
+      const modifiedNumber = number - index;
+      modifiedSum += modifiedNumber;
+      originalSum += number;
+      return modifiedNumber;
     }
+  });
 
-    newSum += num;
-  }
-
-  console.log(arr);
-  console.log(oldSum);
-  console.log(newSum);
+  console.log(modifiedArray);
+  console.log(originalSum);
+  console.log(modifiedSum);
 }
+
+slove([5, 15, 23, 56, 35]);
