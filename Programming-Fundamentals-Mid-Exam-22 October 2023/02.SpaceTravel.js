@@ -37,6 +37,7 @@ function solve(input) {
       console.log(`Fuel added: ${addedFuel}.`);
     } else if (command === "Titan") {
       console.log("You have reached Titan, all passengers are safe.");
+      console.log("Safe.");
       return;
     }
   }
